@@ -1,9 +1,10 @@
+cat > src/main/resources/static/index.html <<'EOF'
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PrathmeshWake IT Services</title>
+  <title>GrownUp IT Services</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -11,9 +12,9 @@
   <header class="site-header">
     <div class="container header-inner">
       <div class="brand">
-        <div class="logo">PW</div>
+        <div class="logo">GU</div>
         <div class="brand-text">
-          <h1>PrathmeshWake</h1>
+          <h1>GrownUp</h1>
           <span>IT Services</span>
         </div>
       </div>
@@ -30,22 +31,22 @@
   <main>
     <section id="home" class="hero">
       <div class="hero-slider">
-        <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1526378721666-3f2b7a7f3f3b?auto=format&fit=crop&w=1400&q=60')">
+        <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=60')">
           <div class="overlay"></div>
           <div class="hero-content container">
-            <h2>Reliable IT Solutions for Growing Businesses</h2>
-            <p>Design. Build. Deploy. Scale.</p>
+            <h2>Technology that helps your business grow</h2>
+            <p>Design. Build. Deploy. Scale with confidence.</p>
             <div class="hero-actions">
               <button onclick="scrollToSection('services')">Explore Services</button>
               <a class="ghost" href="#contact">Contact Us</a>
             </div>
           </div>
         </div>
-        <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=1400&q=60')">
+        <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1400&q=60')">
           <div class="overlay"></div>
           <div class="hero-content container">
-            <h2>Cloud Native and DevOps Excellence</h2>
-            <p>Automated pipelines, resilient infra, faster releases.</p>
+            <h2>Cloud native, secure, and scalable</h2>
+            <p>Modern engineering practices for faster delivery.</p>
             <div class="hero-actions">
               <button onclick="scrollToSection('services')">Our Approach</button>
               <a class="ghost" href="#about">Learn More</a>
@@ -67,8 +68,8 @@
     <section id="about" class="section alt">
       <div class="container about-grid">
         <div>
-          <h3>About Us</h3>
-          <p>We are a focused team delivering high-quality software and cloud solutions. We combine design, engineering, and operations to help businesses move faster and safer.</p>
+          <h3>About GrownUp IT Services</h3>
+          <p>We help businesses build reliable software and cloud platforms. Our team focuses on quality, security, and measurable outcomes.</p>
           <ul>
             <li>Custom web and mobile apps</li>
             <li>Cloud architecture and migrations</li>
@@ -92,7 +93,7 @@
         </form>
         <div class="contact-info">
           <h4>Get in touch</h4>
-          <p>Email: <a href="mailto:hello@prathmeshwake.com">hello@prathmeshwake.com</a></p>
+          <p>Email: <a href="mailto:hello@grownupit.com">hello@grownupit.com</a></p>
           <p>Location: Kollam, Kerala, India</p>
           <div class="socials">
             <a href="#" aria-label="LinkedIn">LinkedIn</a>
@@ -105,11 +106,12 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>© 2026 PrathmeshWake IT Services — Built with care</p>
+      <p>© 2026 GrownUp IT Services — Built with care</p>
     </div>
   </footer>
 
 <script>
+/* Slider */
 let current = 0;
 const slides = document.querySelectorAll('.hero .slide');
 function showSlide(i){ slides.forEach((s, idx) => s.style.opacity = (idx===i? '1':'0')); }
@@ -117,7 +119,11 @@ document.getElementById('prev').addEventListener('click', ()=> { current = (curr
 document.getElementById('next').addEventListener('click', ()=> { current = (current+1)%slides.length; showSlide(current); });
 setInterval(()=> { current = (current+1)%slides.length; showSlide(current); }, 6000);
 showSlide(0);
+
+/* Scroll helper */
 function scrollToSection(id){ document.getElementById(id).scrollIntoView({behavior:'smooth'}); }
+
+/* Load services dynamically */
 async function loadServices(){
   try {
     const res = await fetch('/api/services');
@@ -134,6 +140,8 @@ async function loadServices(){
   } catch(e){ console.error(e); }
 }
 window.addEventListener('load', loadServices);
+
+/* Contact form submit */
 document.getElementById('contactForm').addEventListener('submit', async (e)=>{
   e.preventDefault();
   const form = e.target;
@@ -150,3 +158,4 @@ document.getElementById('contactForm').addEventListener('submit', async (e)=>{
 </script>
 </body>
 </html>
+EOF
