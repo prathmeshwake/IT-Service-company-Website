@@ -1,4 +1,4 @@
-package com.itservices.website.model;
+package com.prathmeshwake.itservices.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDateTime;
@@ -19,6 +19,6 @@ public class Contact {
     private LocalDateTime createdAt = LocalDateTime.now();
 
     public Contact() {}
-
+    
     // Getters & Setters
 }
