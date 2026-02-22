@@ -1,8 +1,8 @@
-package com.itservices.website.service;
+package com.prathmeshwake.itservices.service;
 
 import org.springframework.stereotype.Service;
-import com.itservices.website.model.Contact;
-import com.itservices.website.repository.ContactRepository;
+import com.prathmeshwake.itservices.model.Contact;
+import com.prathmeshwake.itservices.repository.ContactRepository;
 
 @Service
 public class ContactService {
