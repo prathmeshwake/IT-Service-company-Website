@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: it-services-container
-        image: prathmeshwake/it-services:v4
+        image: prathmeshwake/it-services:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
