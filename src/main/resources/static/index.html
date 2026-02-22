@@ -1,92 +1,189 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>GrownUp IT Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <!-- Header -->
-  <header>
-    <div class="logo">GrownUp IT Services</div>
-    <nav>
-      <ul>
-        <li><a href="#hero">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="logo">GU</div>
+        <div class="brand-text">
+          <h1>GrownUp</h1>
+          <span>IT Services</span>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button class="cta" onclick="scrollToSection('contact')">Get a Quote</button>
+      </nav>
+    </div>
   </header>
 
-  <!-- Hero Section -->
-  <section id="hero">
-    <div class="hero-content">
-      <h1>Empowering Businesses with IT Excellence</h1>
-      <p>We deliver scalable, secure, and innovative solutions for modern enterprises.</p>
-      <a href="#services" class="btn">Discover Our Services</a>
-    </div>
-  </section>
+  <!-- Hero -->
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-slider">
+        <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1400&q=60')">
+          <div class="overlay"></div>
+          <div class="hero-content container">
+            <h2>Technology that helps your business grow</h2>
+            <p>Design. Build. Deploy. Scale with confidence.</p>
+            <div class="hero-actions">
+              <button onclick="scrollToSection('services')">Explore Services</button>
+              <a class="ghost" href="#contact">Contact Us</a>
+            </div>
+          </div>
+        </div>
+        <div class="slide" style="background-image:url('https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1400&q=60')">
+          <div class="overlay"></div>
+          <div class="hero-content container">
+            <h2>Cloud native, secure, and scalable</h2>
+            <p>Modern engineering practices for faster delivery.</p>
+            <div class="hero-actions">
+              <button onclick="scrollToSection('services')">Our Approach</button>
+              <a class="ghost" href="#about">Learn More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slider-controls">
+        <button id="prev">‹</button>
+        <button id="next">›</button>
+      </div>
+    </section>
 
-  <!-- Services Section -->
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="service-grid">
-      <div class="service-card">
-        <h3>Monitoring & Support</h3>
-        <p>24/7 proactive monitoring and dependable support to keep your systems healthy.</p>
-      </div>
-      <div class="service-card">
-        <h3>Data Engineering</h3>
-        <p>Designing pipelines and analytics to transform raw data into business insights.</p>
-      </div>
-      <div class="service-card">
-        <h3>Research & Development</h3>
-        <p>Innovating solutions that future-proof your business in a competitive landscape.</p>
-      </div>
-      <div class="service-card">
-        <h3>Cloud & Kubernetes</h3>
-        <p>Deploying containerized applications with modern cloud-native practices.</p>
-      </div>
-      <div class="service-card">
-        <h3>Cybersecurity</h3>
-        <p>Protecting your digital assets with robust security frameworks and audits.</p>
-      </div>
-      <div class="service-card">
-        <h3>IT Consulting</h3>
-        <p>Guiding your technology strategy with expert advice and tailored roadmaps.</p>
-      </div>
-    </div>
-  </section>
+    <!-- Services -->
+    <section id="services" class="section container">
+      <h3 class="section-title">Our Services</h3>
+      <div id="services-grid" class="grid"></div>
+    </section>
 
-  <!-- About Section -->
-  <section id="about">
-    <h2>About Us</h2>
-    <p>
-      GrownUp IT Services is built on the belief that technology should empower, not complicate. 
-      We combine technical mastery with a passion for innovation to deliver solutions that are practical, reliable, and future-ready.
-    </p>
-    <p>
-      Our team of professionals brings expertise across monitoring, data engineering, R&D, and cloud-native deployments, ensuring your business thrives in the digital era.
-    </p>
-  </section>
+    <!-- About -->
+    <section id="about" class="section alt">
+      <div class="container about-grid">
+        <div>
+          <h3>About GrownUp IT Services</h3>
+          <p>We help businesses build reliable software and cloud platforms. Our team focuses on quality, security, and measurable outcomes.</p>
+          <ul>
+            <li>Custom web and mobile apps</li>
+            <li>Cloud architecture and migrations</li>
+            <li>DevOps, CI/CD, and automation</li>
+            <li>Security and compliance</li>
+          </ul>
+        </div>
+        <div class="about-image" aria-hidden="true"></div>
+      </div>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>Contact Us</h2>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit" class="btn">Send Message</button>
-    </form>
-    <p>Email us at <a href="mailto:info@grownupit.com">info@grownupit.com</a></p>
-  </section>
+    <!-- Contact -->
+    <section id="contact" class="section container">
+      <h3 class="section-title">Contact Us</h3>
+      <div class="contact-grid">
+        <form id="contactForm" class="contact-form">
+          <input name="name" placeholder="Your name" required />
+          <input name="email" type="email" placeholder="Your email" required />
+          <textarea name="message" rows="5" placeholder="How can we help?" required></textarea>
+          <button type="submit">Send Message</button>
+          <div id="contactResult" class="result"></div>
+        </form>
+        <div class="contact-info">
+          <h4>Get in touch</h4>
+          <p>Email: <a href="mailto:hello@grownupit.com">hello@grownupit.com</a></p>
+          <p>Location: Kollam, Kerala, India</p>
+          <div class="socials">
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="GitHub">GitHub</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- Footer -->
-  <footer>
-    <p>&copy; 2026 GrownUp IT Services | Designed with professionalism and passion</p>
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2026 GrownUp IT Services — Built with care</p>
+    </div>
   </footer>
+
+  <!-- Scripts -->
+  <script>
+    /* Slider */
+    let current = 0;
+    const slides = document.querySelectorAll('.hero .slide');
+    function showSlide(i) {
+      slides.forEach((s, idx) => s.style.opacity = (idx === i ? '1' : '0'));
+    }
+    document.getElementById('prev').addEventListener('click', () => {
+      current = (current - 1 + slides.length) % slides.length;
+      showSlide(current);
+    });
+    document.getElementById('next').addEventListener('click', () => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    });
+    setInterval(() => {
+      current = (current + 1) % slides.length;
+      showSlide(current);
+    }, 6000);
+    showSlide(0);
+
+    /* Scroll helper */
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    /* Load services dynamically */
+    async function loadServices() {
+      try {
+        const res = await fetch('/api/services');
+        const services = await res.json();
+        const grid = document.getElementById('services-grid');
+        grid.innerHTML = services.map(s => `
+          <div class="card">
+            <div class="card-icon">${s.name.charAt(0)}</div>
+            <h4>${s.name}</h4>
+            <p>${s.description}</p>
+          </div>
+        `).join('');
+        document.querySelectorAll('.card').forEach((c, i) =>
+          setTimeout(() => c.classList.add('visible'), i * 120)
+        );
+      } catch (e) {
+        console.error(e);
+      }
+    }
+    window.addEventListener('load', loadServices);
+
+    /* Contact form submit */
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const data = { name: form.name.value, email: form.email.value, message: form.message.value };
+      const resultEl = document.getElementById('contactResult');
+      resultEl.textContent = 'Sending...';
+      try {
+        const res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        const text = await res.text();
+        resultEl.textContent = text;
+        form.reset();
+      } catch (err) {
+        resultEl.textContent = 'Error sending message.';
+      }
+    });
+  </script>
 </body>
 </html>
