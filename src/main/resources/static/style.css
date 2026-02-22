@@ -1,94 +1,164 @@
-/* style.css - GrownUp IT Services (readable, responsive, vibrant) */
-:root{
-  --bg:#071025;
-  --accent:#00c2ff;
-  --accent-2:#0066cc;
-  --muted:#6b7280;
-  --card:#ffffff;
-  --container:1200px;
-  --radius:14px;
-  --shadow: 0 14px 36px rgba(2,6,23,0.08);
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Reset & base */
-*{box-sizing:border-box}
-html,body{height:100%}
-body{
-  margin:0;
-  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  color:#0b1220;
-  background: linear-gradient(180deg,#f6fbff 0%, #ffffff 100%);
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  line-height:1.5;
+/* Body */
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  line-height: 1.6;
+  background: #f4f4f9;
+  color: #333;
 }
-.container{max-width:var(--container);margin:0 auto;padding:0 20px}
 
 /* Header */
-.site-header{
-  background:linear-gradient(90deg,var(--bg), #0b1a2b);
-  color:#fff;
-  position:sticky;top:0;z-index:60;
-  box-shadow:0 4px 18px rgba(2,6,23,0.12);
+header {
+  background: #004aad;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
 }
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
-.brand{display:flex;align-items:center;gap:12px}
-.logo{width:56px;height:56px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;display:flex;align-items:center;justify-content:center;border-radius:12px;font-weight:800;font-size:1.1rem}
-.brand-text h1{margin:0;font-size:1.15rem}
-.brand-text span{font-size:0.8rem;color:#cbd5e1}
 
-/* Nav */
-.nav a{color:#fff;margin:0 10px;text-decoration:none;font-weight:600}
-.nav .cta{background:#fff;color:var(--bg);border:none;padding:8px 12px;border-radius:10px;cursor:pointer;font-weight:700;margin-left:12px}
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
 
 /* Hero */
-.hero{position:relative;overflow:hidden;height:62vh;min-height:420px;display:flex;align-items:center}
-.hero-slider{position:relative;width:100%;height:100%}
-.hero .slide{position:absolute;inset:0;background-size:cover;background-position:center;transition:opacity 1s ease;opacity:0}
-.hero .slide .overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(7,16,30,0.55), rgba(7,16,30,0.25))}
-.hero-content{position:relative;color:#fff;padding:40px 20px;max-width:900px}
-.hero-content h2{font-size:2.4rem;margin:0 0 10px;line-height:1.05;text-shadow:0 8px 24px rgba(3,7,18,0.45)}
-.hero-content p{margin:0 0 18px;color:rgba(255,255,255,0.95)}
-.hero-actions button{background:var(--accent);border:none;color:#fff;padding:12px 18px;border-radius:10px;cursor:pointer;font-weight:700}
-.hero-actions .ghost{color:#fff;text-decoration:underline}
+#hero {
+  background: linear-gradient(135deg, #ff6f61, #ffcc00);
+  color: #fff;
+  text-align: center;
+  padding: 5rem 2rem;
+}
 
-/* Slider controls */
-.slider-controls{position:absolute;right:20px;bottom:20px;display:flex;gap:8px}
-.slider-controls button{background:rgba(255,255,255,0.12);border:none;color:#fff;padding:8px 12px;border-radius:8px;cursor:pointer;font-size:1.2rem}
+#hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
 
-/* Sections */
-.section{padding:72px 0}
-.section-title{font-size:1.6rem;margin:0 0 20px;text-align:center}
+#hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
 
-/* Grid & cards */
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px}
-.card{background:var(--card);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow);transform:translateY(18px);opacity:0;transition:transform 0.6s cubic-bezier(.2,.9,.2,1),opacity 0.6s}
-.card.visible{transform:none;opacity:1}
-.card-icon{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;margin-bottom:14px;font-size:1.2rem}
+.btn {
+  background: #004aad;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #003080;
+}
+
+/* Services */
+#services {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.service-card {
+  background: #fff;
+  border: 2px solid #004aad;
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+  background: #e6f0ff;
+}
 
 /* About */
-.alt{background:linear-gradient(180deg,#f7fbff,#ffffff)}
-.about-grid{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center}
-.about-image{height:320px;border-radius:14px;background-image:url('https://images.unsplash.com/photo-1526378721666-3f2b7a7f3f3b?auto=format&fit=crop&w=900&q=60');background-size:cover;background-position:center}
+#about {
+  background: #fff;
+  padding: 3rem 2rem;
+  text-align: center;
+}
 
 /* Contact */
-.contact-grid{display:grid;grid-template-columns:1fr 360px;gap:30px;align-items:start}
-.contact-form input,.contact-form textarea{width:100%;padding:14px;border-radius:10px;border:1px solid #e6eef8;margin-bottom:12px;font-size:1rem}
-.contact-form button{background:var(--accent);color:#fff;border:none;padding:12px 18px;border-radius:10px;cursor:pointer;font-weight:800}
-.contact-info a{color:var(--accent);text-decoration:none}
+#contact {
+  background: #f9f9f9;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+#contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 0 auto 2rem;
+}
+
+#contact input, #contact textarea {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#contact button {
+  background: #004aad;
+  color: #fff;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#contact button:hover {
+  background: #003080;
+}
 
 /* Footer */
-.site-footer{background:#071025;color:#9fb7d6;padding:20px 0;text-align:center;font-size:0.95rem}
-.result{margin-top:10px;color:var(--muted);font-weight:700}
-
-/* Accessibility focus */
-a:focus,button:focus,input:focus,textarea:focus{outline:3px solid rgba(0,194,255,0.18);outline-offset:3px}
+footer {
+  background: #004aad;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+}
 
 /* Responsive */
-@media (max-width:1000px){
-  .about-grid{grid-template-columns:1fr}
-  .contact-grid{grid-template-columns:1fr}
-  .hero-content h2{font-size:1.8rem}
-  .nav a{display:none}
-  .nav .cta{display:inline-block}
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  #hero h1 {
+    font-size: 2rem;
+  }
+
+  .service-grid {
+    grid-template-columns: 1fr;
+  }
 }
