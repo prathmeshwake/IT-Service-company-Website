@@ -1,8 +1,8 @@
-package com.itservices.website.controller;
+package com.prathmeshwake.itservices.controller;
 
 import org.springframework.web.bind.annotation.*;
-import com.itservices.website.model.Contact;
-import com.itservices.website.service.ContactService;
+import com.prathmeshwake.itservices.model.Contact;
+import com.prathmeshwake.itservices.service.ContactService;
 
 @RestController
 @RequestMapping("/api/contact")
