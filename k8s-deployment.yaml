@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: it-services-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: it-services
+  template:
+    metadata:
+      labels:
+        app: it-services
+    spec:
+      containers:
+      - name: it-services-container
+        image: prathmeshwake/it-services:v4
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
